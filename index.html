@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reynielle Rustia | Portfolio</title>
+    <meta name="description" content="Portfolio website of Reynielle Rustia, a BSIT student and aspiring web developer." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1200">
+                Rustia <span>Reynielle</span>
+            </div>
+
+            <div class="links">
+                <a href="#home" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">Home</a>
+                <a href="#about" data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">About</a>
+                <a href="#skills" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">Skills</a>
+                <a href="#service" data-aos="fade-up" data-aos-duration="700" data-aos-delay="250">Services</a>
+                <a href="#contact" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">Contact</a>
+            </div>
+
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()" aria-label="Open menu"></i>
+        </div>
+
+        <div class="dropdown">
+            <div class="links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#service">Services</a>
+                <a href="#contact">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()" aria-label="Close menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="main-container">
+                <div class="image">
+                    <img src="reynielle.png" alt="Reynielle portrait" />
+                </div>
+
+                <div class="content">
+                    <p class="eyebrow" data-aos="fade-right" data-aos-duration="1000">Hello, I’m</p>
+                    <h1 data-aos="fade-left" data-aos-duration="1200" data-aos-delay="100">Reynielle <span>Rustia</span></h1>
+                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+                        I’m a <span class="typewriter-text"></span><span class="cursor">|</span>
+                    </div>
+                    <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                        I’m a BSIT student at Bestlink College of the Philippines, passionate about web design,
+                        front-end development, and digital creativity. I enjoy turning ideas into clean, user-friendly,
+                        and visually appealing websites.
+                    </p>
+
+                    <div class="social-links" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                        <a href="https://www.instagram.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+
+                    <div class="btn-group" data-aos="zoom-in-left" data-aos-duration="1200" data-aos-delay="500">
+                        <a href="#contact" class="primary-btn">Hire Me</a>
+                        <a href="#about" class="secondary-btn">About Me</a>
+                    </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="content">
+                <div class="title" data-aos="fade-up" data-aos-duration="1000"><span>About Me</span></div>
+
+                <div class="about-details">
+                    <div class="left" data-aos="fade-right" data-aos-duration="1100" data-aos-delay="100">
+                        <img src="reynielle.jpg" alt="Reynielle portrait" />
+                    </div>
+
+                    <div class="right">
+                        <p class="about-text" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="200">
+                            I am <span>Reynielle</span>, a student and aspiring <span>Web Designer & Developer</span>
+                            with a strong interest in creating responsive and modern digital experiences.
+                        </p>
+
+                        <div class="exp-area">
+                            <p class="exp" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="300">
+                                Experience: <span>1+ Years</span>
+                            </p>
+
+                            <p class="exp" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="350">
+                                Specialty: <span>Web Design & Front-end Development</span>
+                            </p>
+
+                            <p class="exp" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="400">
+                                Address: <span>Quezon City, Philippines</span>
+                            </p>
+
+                            <p class="exp" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="450">
+                                Email: <span>reynielle.rustia@email.com</span>
+                            </p>
+
+                            <p class="exp" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="500">
+                                Contact: <span>0960-294-3177</span>
+                            </p>
+
+                            <p class="exp" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="550">
+                                Freelance: <span>Available</span>
+                            </p>
+
+                            <div class="button" data-aos="zoom-out" data-aos-duration="1100" data-aos-delay="600">
+                                <a href="#contact">Contact Me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="content">
+                <div class="title" data-aos="fade-up" data-aos-duration="1000"><span>My Skills</span></div>
+
+                <div class="skills-details">
+                    <div class="text">
+                        <div class="topic" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">Skills that reflect my knowledge</div>
+                        <p data-aos="flip-down" data-aos-duration="1000" data-aos-delay="200">
+                            I build simple, responsive, and modern digital interfaces using HTML, CSS, and JavaScript.
+                            I’m also improving my understanding of design principles, user experience, and problem-solving
+                            to create better and more engaging experiences for users.
+                        </p>
+
+                        <div class="experience" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                            <div class="num">1</div>
+                            <div class="exp">Year of <br />Learning & Practice</div>
+                        </div>
+                    </div>
+
+                    <div class="boxes">
+                        <div class="box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                            <div class="topic">HTML</div>
+                            <div class="per">95%</div>
+                        </div>
+                        <div class="box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="450">
+                            <div class="topic">CSS</div>
+                            <div class="per">90%</div>
+                        </div>
+                        <div class="box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+                            <div class="topic">JavaScript</div>
+                            <div class="per">75%</div>
+                        </div>
+                        <div class="box" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="550">
+                            <div class="topic">java</div>
+                            <div class="per">80%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="service">
+            <div class="content">
+                <div class="title" data-aos="fade-up" data-aos-duration="1000"><span>My Services</span></div>
+
+                <div class="boxes">
+                    <div class="box" data-aos="fade-right" data-aos-duration="1100" data-aos-delay="100">
+                         <img class="services-img" src=".jpg" />
+                        <div class="icon"><i class="fas fa-desktop"></i></div>
+                        <div class="topic">Web Development</div>
+                        <p>Creating responsive and user-friendly websites using modern front-end practices.</p>
+                    </div>
+
+                    <div class="box" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="150">
+                         <img class="services-img" src=".jpg" />
+                        <div class="icon"><i class="fas fa-paint-brush"></i></div>
+                        <div class="topic">Kali linux</div>
+                        <p>Designing clean visuals, digital assets, and layouts suited for online branding.</p>
+                    </div>
+
+                    <div class="box" data-aos="zoom-in" data-aos-duration="1100" data-aos-delay="200">
+                        <img class="services-img" src="re.jpg"/>
+                       
+                        <div class="topic">Landing Pages</div>
+                        <p>Building simple but effective landing page designs that capture attention quickly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="certificates" id="certificates">
+            <div class="content">
+                <div class="title" data-aos="fade-up" data-aos-duration="1000"><span>Certificates</span></div>
+
+                <div class="certificate-grid">
+                    <div class="certificate-card" data-aos="zoom-in" data-aos-duration="1100" data-aos-delay="100">
+                        <img class="cert-img" src="rey.jpg" />
+                       
+                        <div class="cert-name">Block chain </div>
+                        <p>It is an participants block chain development code camp.</p>
+                    </div>
+
+                    <div class="certificate-card" data-aos="zoom-in" data-aos-duration="1100" data-aos-delay="200">
+                        <img class="cert-img" src="reyn.jpg" />
+                        <div class="cert-name">Ubuntu starter pack</div>
+                        <p>Linux commands.</p>
+                    </div>
+
+                    <div class="certificate-card" data-aos="zoom-in" data-aos-duration="1100" data-aos-delay="300">
+                        <img class="cert-img" src="reynielles.jpg" />
+                        
+                        <div class="cert-name">Computer systems servicing </div>
+                        <p>It it as study of computer parts and netwrking configuration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="content">
+                <div class="title" data-aos="fade-up" data-aos-duration="1000"><span>Contact Me</span></div>
+
+                <div class="text">
+                    <div class="topic" data-aos="fade-left" data-aos-duration="1100" data-aos-delay="100">Have a project in mind?</div>
+                    <p data-aos="fade-right" data-aos-duration="1100" data-aos-delay="150">
+                        I’m open to freelance work, collaborations, and opportunities to build creative and engaging web experiences.
+                    </p>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" action="#" method="post">
+                        <label for="name" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="200">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required data-aos="fade-up" data-aos-duration="1100" data-aos-delay="200" />
+
+                        <label for="email" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="250">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required data-aos="fade-up" data-aos-duration="1100" data-aos-delay="250" />
+
+                        <label for="phone" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="300">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required data-aos="fade-up" data-aos-duration="1100" data-aos-delay="300" />
+
+                        <label for="message" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="350">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required data-aos="fade-up" data-aos-duration="1100" data-aos-delay="350"></textarea>
+
+                        <button type="submit" class="contact-btn" data-aos="zoom-in-up" data-aos-duration="1100" data-aos-delay="400">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="text">
+            <span>Created by <a href="#home">Reynielle</a> | &copy; 2025 All Rights Reserved</span>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 0,
+            once: true
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
