@@ -22,7 +22,7 @@ function closeMobileMenu() {
 document.querySelectorAll(".links a").forEach((link) => {
     link.addEventListener("click", closeMobileMenu);
 });
-,
+
 const texts = ["Web Developer", "Cybersecurity Enthusiast"];
 let speed = 100;
 const textElements = document.querySelector(".typewriter-text");
