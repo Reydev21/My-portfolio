@@ -82,3 +82,17 @@ function toggleTheme() {
 }
 
 syncThemeButton();
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+const scrollButton = document.querySelector(".scroll-button");
+
+function updateScrollButton() {
+    if (!scrollButton) return;
+    scrollButton.hidden = window.scrollY < 400;
+}
+
+window.addEventListener("scroll", updateScrollButton, { passive: true });
+updateScrollButton();

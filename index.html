@@ -11,7 +11,7 @@
         (function () {
             var saved = null;
             try { saved = localStorage.getItem("portfolio-theme"); } catch (e) {}
-            var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+            var dark = saved ? saved === "dark" : true;
             document.documentElement.dataset.theme = dark ? "dark" : "light";
         })();
     </script>
@@ -21,7 +21,8 @@
     <nav>
         <div class="nav-container">
             <div class="logo" data-aos="zoom-in" data-aos-duration="1200">
-                 <span></span>
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                 <span>Reynielle Rustia</span>
             </div>
 
             <div class="links">
@@ -58,37 +59,24 @@
 
     <main>
         <section class="hero" id="home">
-            <div class="main-container">
-                <div class="image">
-                    <img src="reynielle.png" alt="Reynielle portrait" />
-                </div>
-
-                <div class="content">
+            <div class="hero-grid">
+                <div class="hero-main">
                     <p class="eyebrow" data-aos="fade-right" data-aos-duration="1000">Hello, I am</p>
-                    <h1 data-aos="fade-left" data-aos-duration="1200" data-aos-delay="100">Reynielle <span>Rustia</span></h1>
+                    <h1 data-aos="fade-left" data-aos-duration="1200" data-aos-delay="100">Reynielle<br /><span>Rustia</span></h1>
                     <div class="typewriter" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
-                        I am  <span class="typewriter-text"></span><span class="cursor">|</span>
+                        I am <span class="typewriter-text"></span><span class="cursor">|</span>
                     </div>
-                    <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
-                        I am a BSIT student at Bestlink College of the Philippines, passionate about web design,
-                        front-end development, and digital creativity. I enjoy turning ideas into clean, user-friendly,
-                        and visually appealing websites.
+                    <p class="lede" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                        A BSIT student at Bestlink College of the Philippines who builds clean, responsive
+                        interfaces and the back ends behind them.
                     </p>
 
-                    <div class="social-links" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
-                        <a href="https://github.com/Reydev21" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.facebook.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://www.twitter.com" target="_blank" rel="noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <div class="btn-group" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                        <a href="#projects" class="primary-btn">View my work</a>
+                        <a href="#contact" class="secondary-btn">Hire me</a>
                     </div>
 
-                    <div class="btn-group" data-aos="zoom-in-left" data-aos-duration="1200" data-aos-delay="500">
-                        <a href="#contact" class="primary-btn">Hire Me</a>
-                        <a href="#about" class="secondary-btn">About Me</a>
-                    </div>
-
-                    <div class="terminal" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+                    <div class="terminal" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
                         <div class="terminal-bar">
                             <span class="dot red"></span>
                             <span class="dot yellow"></span>
@@ -106,6 +94,27 @@
                         </div>
                     </div>
                 </div>
+
+                <aside class="hero-side">
+                    <div class="hero-photo" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                        <img src="reynielle.png" alt="Reynielle Rustia portrait" />
+                    </div>
+
+                    <nav class="side-links" aria-label="Section shortcuts" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="350">
+                        <a href="#about"><span>About me</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                        <a href="#projects"><span>My work</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                        <a href="#stack"><span>Tech stack</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                        <a href="#contact"><span>Get in touch</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                    </nav>
+
+                    <div class="social-links" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="450">
+                        <a href="https://github.com/Reydev21" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" rel="noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </aside>
             </div>
         </section>
 
@@ -425,6 +434,10 @@
             <span>Created by <a href="#home">Reynielle</a> | &copy; 2026 All Rights Reserved</span>
         </div>
     </footer>
+
+    <button class="scroll-button" type="button" onclick="scrollToTop()" aria-label="Back to top" hidden>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
