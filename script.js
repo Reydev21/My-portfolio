@@ -54,7 +54,21 @@ function eraseText() {
     }
 }
 
-window.addEventListener("load", typeWriter);
+let typewriterStarted = false;
+
+function startTypewriter() {
+    if (typewriterStarted) return;
+    typewriterStarted = true;
+    typeWriter();
+}
+
+// Waiting for window.load held the first line blank until every photo and
+// CDN stylesheet had arrived; the text only needs the DOM.
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", startTypewriter);
+} else {
+    startTypewriter();
+}
 
 const THEME_KEY = "portfolio-theme";
 
