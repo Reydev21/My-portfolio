@@ -55,3 +55,30 @@ function eraseText() {
 }
 
 window.addEventListener("load", typeWriter);
+
+const THEME_KEY = "portfolio-theme";
+
+function currentTheme() {
+    return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+}
+
+function syncThemeButton() {
+    const btn = document.querySelector(".theme-toggle");
+    if (!btn) return;
+    const dark = currentTheme() === "dark";
+    btn.setAttribute("aria-pressed", String(dark));
+    btn.setAttribute("aria-label", dark ? "Switch to light background" : "Switch to dark background");
+}
+
+function toggleTheme() {
+    const next = currentTheme() === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try {
+        localStorage.setItem(THEME_KEY, next);
+    } catch (e) {
+        // private browsing can block storage; the toggle still works for this visit
+    }
+    syncThemeButton();
+}
+
+syncThemeButton();

@@ -7,6 +7,14 @@
     <meta name="description" content="Portfolio website of Reynielle Rustia, a BSIT student and aspiring web developer." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script>
+        (function () {
+            var saved = null;
+            try { saved = localStorage.getItem("portfolio-theme"); } catch (e) {}
+            var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.dataset.theme = dark ? "dark" : "light";
+        })();
+    </script>
         <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,6 +32,13 @@
                 <a href="#service" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">Services</a>
                 <a href="#contact" data-aos="fade-up" data-aos-duration="700" data-aos-delay="350">Contact</a>
             </div>
+
+            <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-pressed="false" aria-label="Switch to dark background">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                    <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path>
+                </svg>
+            </button>
 
             <i class="fa-solid fa-bars hamburg" onclick="hamburg()" aria-label="Open menu"></i>
         </div>
