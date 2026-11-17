@@ -2854,3 +2854,17 @@ footer a:hover {
         display: none;
     }
 }
+
+/* ============================================================
+   Theme swap is instant, hover motion is not
+   Suppressing transitions only for the frame that changes the
+   palette keeps every hover transition intact.
+   ============================================================ */
+
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+    transition: none !important;
+    animation-duration: 0s !important;
+}

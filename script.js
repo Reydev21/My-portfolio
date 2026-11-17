@@ -86,7 +86,15 @@ function syncThemeButton() {
 
 function toggleTheme() {
     const next = currentTheme() === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = next;
+    const root = document.documentElement;
+
+    // 65 elements carry 0.18-0.22s colour transitions, so a theme swap
+    // reads as a lag even though the paint itself is only ~130ms.
+    root.classList.add("theme-switching");
+    root.dataset.theme = next;
+    void root.offsetWidth;
+    requestAnimationFrame(() => root.classList.remove("theme-switching"));
+
     try {
         localStorage.setItem(THEME_KEY, next);
     } catch (e) {
