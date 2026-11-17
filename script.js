@@ -88,11 +88,19 @@ function scrollToTop() {
 }
 
 const scrollButton = document.querySelector(".scroll-button");
+const scrollProgress = document.querySelector(".scroll-progress");
 
-function updateScrollButton() {
-    if (!scrollButton) return;
-    scrollButton.hidden = window.scrollY < 400;
+function updateScrollUi() {
+    if (scrollButton) {
+        scrollButton.hidden = window.scrollY < 400;
+    }
+    if (scrollProgress) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+        scrollProgress.style.width = pct.toFixed(2) + "%";
+    }
 }
 
-window.addEventListener("scroll", updateScrollButton, { passive: true });
-updateScrollButton();
+window.addEventListener("scroll", updateScrollUi, { passive: true });
+window.addEventListener("resize", updateScrollUi);
+updateScrollUi();
