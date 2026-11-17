@@ -2727,3 +2727,29 @@ footer a {
 footer a:hover {
     color: var(--text);
 }
+
+/* ============================================================
+   Hero photo leads the stacked layout
+   Below 900px the aside is dissolved so the photo becomes a grid
+   item and can sit above the intro instead of under all of it.
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .hero-side {
+        display: contents;
+    }
+
+    .hero-photo {
+        order: -1;
+        width: 100%;
+        max-width: 300px;
+        max-height: none;
+        margin: 0 auto;
+        justify-self: center;
+    }
+
+    .side-links,
+    .social-links {
+        justify-self: stretch;
+    }
+}
