@@ -2808,3 +2808,16 @@ footer a:hover {
         margin: 0 0 1.25rem;
     }
 }
+
+/* ---------- the GitHub link lives inside its contact row ---------- */
+
+.contact-rows .has-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-rows .has-icon i {
+    font-size: 1.1rem;
+    line-height: 1;
+}
