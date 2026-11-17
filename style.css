@@ -1476,8 +1476,6 @@ section .topic,
 .project-head i {
     font-size: 1.15rem;
     line-height: 1;
-    filter: grayscale(1) contrast(1.1);
-    opacity: 0.85;
 }
 
 .tags {
@@ -2217,5 +2215,126 @@ footer {
 @media (max-width: 900px) {
     section .title {
         padding-left: 2.6rem;
+    }
+}
+
+/* ============================================================
+   Project and stack detail pass
+   The cards were reading as flat black text on white because every
+   brand mark was desaturated and the tags were empty outlines.
+   ============================================================ */
+
+.project-head i {
+    width: 38px;
+    height: 38px;
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    font-size: 1.35rem;
+    transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.project-card:hover .project-head i {
+    transform: translateY(-1px);
+    border-color: var(--muted);
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--text);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.26s ease;
+}
+
+.project-card:hover::before {
+    transform: scaleY(1);
+}
+
+.tags li {
+    padding: 0.28rem 0.62rem;
+    background: var(--surface-2);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+.project-link {
+    margin-top: 0.35rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.project-link::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    margin-left: auto;
+    border-top: 1.5px solid currentColor;
+    border-right: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.project-link:hover {
+    text-decoration: none;
+}
+
+.project-link:hover::after {
+    transform: rotate(45deg) translate(3px, -3px);
+}
+
+.chips li {
+    padding: 0.42rem 0.72rem;
+    background: var(--surface-2);
+    border-color: transparent;
+    transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.chips li:hover {
+    transform: translateY(-2px);
+    background: var(--bg-soft, var(--surface-2));
+    border-color: var(--border);
+}
+
+.chips i {
+    font-size: 1.25rem;
+}
+
+.stack-topic,
+.project-head h3 {
+    letter-spacing: -0.01em;
+}
+
+.section-meta {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: -1.6rem 0 2.2rem 3.1rem;
+}
+
+@media (max-width: 900px) {
+    .section-meta {
+        margin-left: 2.6rem;
     }
 }
