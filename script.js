@@ -104,3 +104,62 @@ function updateScrollUi() {
 window.addEventListener("scroll", updateScrollUi, { passive: true });
 window.addEventListener("resize", updateScrollUi);
 updateScrollUi();
+
+const hero = document.querySelector(".hero");
+const heroPhoto = document.querySelector(".hero-photo");
+const photoImg = heroPhoto ? heroPhoto.querySelector("img") : null;
+
+// A pointer that can hover is the only case where a follow effect reads as
+// intentional; on touch the same transform just looks like a stuck image.
+const canHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+let frame = null;
+let pending = null;
+
+function applyTilt() {
+    frame = null;
+    if (!pending || !heroPhoto) return;
+
+    const rect = heroPhoto.getBoundingClientRect();
+    const clamp = (v) => Math.max(-1, Math.min(1, v));
+    const dx = clamp((pending.x - (rect.left + rect.width / 2)) / (window.innerWidth / 2));
+    const dy = clamp((pending.y - (rect.top + rect.height / 2)) / (window.innerHeight / 2));
+
+    heroPhoto.style.setProperty("--shift-x", (dx * 10).toFixed(2) + "px");
+    heroPhoto.style.setProperty("--shift-y", (dy * 10).toFixed(2) + "px");
+    heroPhoto.style.setProperty("--tilt-x", (dx * 7).toFixed(2) + "deg");
+    heroPhoto.style.setProperty("--tilt-y", (dy * -7).toFixed(2) + "deg");
+
+    if (photoImg) {
+        photoImg.style.setProperty("--img-x", (dx * -14).toFixed(2) + "px");
+        photoImg.style.setProperty("--img-y", (dy * -14).toFixed(2) + "px");
+    }
+    pending = null;
+}
+
+function resetTilt() {
+    if (!heroPhoto) return;
+    ["--shift-x", "--shift-y", "--tilt-x", "--tilt-y"].forEach((v) => heroPhoto.style.removeProperty(v));
+    if (photoImg) {
+        photoImg.style.removeProperty("--img-x");
+        photoImg.style.removeProperty("--img-y");
+    }
+}
+
+function onHeroMove(event) {
+    pending = { x: event.clientX, y: event.clientY };
+    if (frame === null) frame = requestAnimationFrame(applyTilt);
+}
+
+if (hero && heroPhoto && canHover.matches && !prefersReduced.matches) {
+    hero.addEventListener("pointermove", onHeroMove);
+    hero.addEventListener("pointerleave", () => {
+        pending = null;
+        if (frame !== null) {
+            cancelAnimationFrame(frame);
+            frame = null;
+        }
+        resetTilt();
+    });
+}
