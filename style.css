@@ -2783,3 +2783,43 @@ footer a:hover {
         margin: 0 auto;
     }
 }
+
+/* ============================================================
+   Tablet hero keeps the portrait beside the intro
+   The 900px breakpoint stacked everything, which pushed the name
+   below the fold. Between 620 and 900 the two columns still fit if
+   the portrait gives up its desktop width.
+   ============================================================ */
+
+@media (min-width: 620px) and (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: minmax(0, 1fr) 252px;
+        align-items: start;
+    }
+
+    .hero-side {
+        display: block;
+    }
+
+    .hero-photo {
+        order: 0;
+        width: 100%;
+        max-width: 252px;
+        margin: 0 0 1.25rem;
+        justify-self: end;
+    }
+
+    .side-links {
+        width: 100%;
+        max-width: none;
+        margin: 0 0 1.25rem;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+        gap: 0.4rem;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+}
